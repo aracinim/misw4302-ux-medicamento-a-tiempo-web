@@ -1,0 +1,13 @@
+.dashboard-container {
+  padding: 20px;
+}
+.cards {
+  display: flex;
+  gap: 20px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
