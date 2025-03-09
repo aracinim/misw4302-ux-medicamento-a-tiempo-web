@@ -1,36 +1,41 @@
 import { Component } from '@angular/core';
-import { ChartData, ChartOptions } from 'chart.js';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatTableModule} from '@angular/material/table';
-import {MatCardModule} from '@angular/material/card';
-import {SidebarComponent} from '../sidebar/sidebar.component';
-import {CommonModule} from '@angular/common';
+import { SidebarComponent } from '../sidebar/sidebar.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+import {MatButton} from "@angular/material/button";
+import {NgOptimizedImage} from "@angular/common";
+import {MatIcon} from '@angular/material/icon';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
+  imports: [SidebarComponent, MatCardModule, MatMenuModule, MatTableModule, MatButton, NgOptimizedImage, MatIcon, NgxChartsModule],
   templateUrl: './dashboard.component.html',
-  imports: [
-    CommonModule,
-    SidebarComponent,
-    MatCardModule,
-    MatTableModule,
-    MatIconModule,
-    MatButtonModule
-  ],
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  chartData: ChartData<'pie'> = {
-    labels: ['A', 'B', 'C', 'D', 'E', 'F'],
-    datasets: [{ data: [10, 20, 30, 15, 25, 35], backgroundColor: ['#1E88E5', '#D32F2F', '#388E3C', '#FBC02D', '#8E24AA', '#FF5722'] }]
+  stats = [
+    { title: 'Estadísticas', subtitle: 'Últimos 15 días', icon: '/chart.png' },
+    { title: 'Medicamentos consumidos', subtitle: 'Últimos 15 días', icon: '/medicine.png' }
+  ];
+
+  medications = [
+    { name: 'Acetaminofén', consumed: 15, adherence: '100%' },
+    { name: 'Losartan', consumed: 10, adherence: '67%' },
+    { name: 'Insulina', consumed: 15, adherence: '100%' }
+  ];
+
+  view: [number, number] = [400, 300]; // Tamaño del gráfico
+  pieData = [
+    { name: 'Tomados', value: 70 },
+    { name: 'Omitidos', value: 30 }
+  ];
+
+  colorScheme: any = {
+    domain: ['#003729', '#699b88']
   };
 
-  chartOptions: ChartOptions = {
-    responsive: true,
-    plugins: {
-      legend: { position: 'top' }
-    }
-  };
+
 }

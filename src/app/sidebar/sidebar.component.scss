@@ -5,6 +5,17 @@ $link-color: #C8C6C6;
 $menu-text-color: #444748;
 $grid-size: 10px;
 
+:host {
+  display: block;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: $background-color;
+  z-index: 1000;
+}
+
 .sidebar-container {
   height: 100vh;
   display: flex;
@@ -14,7 +25,7 @@ $grid-size: 10px;
 
 .sidebar {
   width: 200px;
-  background-color: #F3F0F0;
+  background-color: #F7F3F2;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -30,6 +41,7 @@ $grid-size: 10px;
   margin-top: calc(3 * $grid-size);
   margin-bottom: calc(2 * $grid-size);
   width: 100%;
+  background-color: $background-color;
 }
 
 .logo-container img {
