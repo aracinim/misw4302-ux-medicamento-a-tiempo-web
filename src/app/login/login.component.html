@@ -1,0 +1,27 @@
+<div class="grid-container">
+  <div class="content">
+    <div class="logo-container">
+      <img ngSrc="/logo.png" alt="Medicamento a Tiempo" class="logo" height="200" width="646" priority>
+    </div>
+    <h1 class="display-large">Inicio Sesión</h1>
+
+    <mat-form-field appearance="outline" class="input-field">
+      <mat-label class="input-label">Usuario</mat-label>
+      <input matInput type="email" value="admin@correo.com">
+      <mat-hint>Usuario Asignado o correo</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input-field">
+      <mat-label class="input-label">Contraseña</mat-label>
+      <input matInput type="password" value="**********">
+      <mat-hint>Contraseña</mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button class="login-button"  routerLink="/dashboard">Ingresar</button>
+
+    <div class="register-container">
+      <span class="label-large">¿Nuevo<br>usuario?</span>
+      <a routerLink="/register" class="link">Crear Usuario</a>
+    </div>
+  </div>
+</div>
