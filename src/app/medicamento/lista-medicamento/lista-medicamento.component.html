@@ -1,37 +1,65 @@
 <app-sidebar></app-sidebar>
 
-<mat-card style="margin: 16px;">
-  <mat-card-title>Lista de Medicamentos</mat-card-title>
-  <mat-card-content>
-<table mat-table [dataSource]="datos">
+<div class="container">
+  <!-- Encabezado: Título y Filtro -->
+  <div class="header-container">
+    <h1 class="display-large">Medicamentos</h1>
+  </div>
 
-  <ng-container matColumnDef="posicion">
-    <th mat-header-cell *matHeaderCellDef> Nombre </th>
-    <td mat-cell *matCellDef="let elemento"> {{elemento.posicion}} </td>
-  </ng-container>
 
-  <ng-container matColumnDef="nombre">
-    <th mat-header-cell *matHeaderCellDef> Frecuencia </th>
-    <td mat-cell *matCellDef="let elemento"> {{elemento.nombre}} </td>
-  </ng-container>
+<div class="content-container">
+  <mat-card style="margin: 16px">
+    <mat-card-title></mat-card-title>
+    <mat-card-content>
+      <table mat-table [dataSource]="datos" class="mat-elevation-z2">
 
-  <ng-container matColumnDef="peso">
-    <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
-    <td mat-cell *matCellDef="let elemento"> {{elemento.peso}} </td>
-  </ng-container>
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let elemento"> {{elemento.nombre}} </td>
+        </ng-container>
 
-  <ng-container matColumnDef="simbolo">
-    <th mat-header-cell *matHeaderCellDef> Fecha de Fin </th>
-    <td mat-cell *matCellDef="let elemento"> {{elemento.simbolo}} </td>
-  </ng-container>
+        <ng-container matColumnDef="frecuencia">
+          <th mat-header-cell *matHeaderCellDef> Frecuencia (Horas) </th>
+          <td mat-cell *matCellDef="let elemento"> {{elemento.frecuencia}} </td>
+        </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="columnasMostrar"></tr>
-  <tr mat-row *matRowDef="let fila; columns: columnasMostrar;"></tr>
-</table>
-<mat-form-field>
-  <mat-label>Filtrar</mat-label>
-  <input matInput (keyup)="aplicarFiltro($event)" placeholder="Ej. Nombre">
-</mat-form-field>
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-</mat-card-content>
-</mat-card>
+        <ng-container matColumnDef="fechaInicio">
+          <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+          <td mat-cell *matCellDef="let elemento"> {{elemento.fechaInicio}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fechaFin">
+          <th mat-header-cell *matHeaderCellDef> Fecha de Fin </th>
+          <td mat-cell *matCellDef="let elemento"> {{elemento.fechaFin}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="accion">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let elemento"> 
+            <button class="mat-icon-button custom-edit-button"  mat-mini-fab aria-label="button with a edit icon">
+              <mat-icon>mode_edit</mat-icon>
+            </button>
+            &nbsp;&nbsp;
+            <button class="mat-icon-button custom-delete-button" mat-mini-fab aria-label="button with a delete icon">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnasMostrar"></tr>
+        <tr mat-row *matRowDef="let fila; columns: columnasMostrar;"></tr>
+      </table>
+      <!--<mat-form-field>
+        <mat-label>Filtrar</mat-label>
+        <input matInput (keyup)="aplicarFiltro($event)" placeholder="Ej. Nombre">
+      </mat-form-field>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>-->
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+  <div class="center-container">
+    <button color="primary" mat-flat-button>Crear Medicamento</button>
+  </div>
+</div>
