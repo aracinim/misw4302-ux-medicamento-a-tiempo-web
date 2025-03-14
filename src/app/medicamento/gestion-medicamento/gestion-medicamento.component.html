@@ -1,1 +1,78 @@
 <app-sidebar></app-sidebar>
+
+<div class="container" style="min-width: 550px ">
+    <!-- Encabezado: Título y Filtro -->
+    <div class="center-container">
+        <div class="header-container">
+            <h1 class="display-large">Editar Medicamento</h1>
+        </div>
+    </div>
+
+    <div class="content-container center-container" >
+
+        <form class="form-container" (ngSubmit)="onSubmit()">
+            <!-- Primera fila: Nombre del medicamento y Frecuencia -->
+            <div class="row">
+                <mat-form-field appearance="outline" class="field field-width-first">
+                    <mat-label>Nombre del Medicamento</mat-label>
+                    <input matInput placeholder="Ingresa el nombre" value="Acetaminofem">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="field">
+                    <mat-label>Frecuencia (Horas)</mat-label>
+                    <input matInput type="number" placeholder="Horas" value="8">
+                </mat-form-field>
+            </div>
+            
+            <!-- Segunda fila: Botón de buscar foto y la imagen -->
+            <div class="row">
+                <button mat-raised-button color="primary" type="button" (click)="buscarFoto()">Foto</button> &nbsp; &nbsp;
+                <button class="mat-icon-button"  mat-mini-fab aria-label="button with a edit icon" >
+                    <mat-icon>image</mat-icon>
+                </button>
+            </div>
+            <br/>
+            <!-- Tercera fila: Fecha de inicio y hora -->
+            <div class="row">
+                <mat-form-field appearance="outline" class="field field-width-first">
+                    <mat-label>Fecha de Inicio</mat-label>
+                    <input matInput [matDatepicker]="pickerInicio" [value]="defaultDateinicio">
+                    <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerInicio></mat-datepicker>
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="field">
+                    <mat-label>Hora de Inicio</mat-label>
+                    <input matInput type="time" value="10:00">
+                </mat-form-field>
+            </div>
+
+            <!-- Cuarta fila: Fecha de Fin y hora -->
+            <div class="row">
+                <mat-form-field appearance="outline" class="field field-width-first">
+                    <mat-label>Fecha de Fin</mat-label>
+                    <input matInput [matDatepicker]="pickerFin" [value]="defaultDateFin">
+                    <mat-datepicker-toggle matSuffix [for]="pickerFin"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerFin></mat-datepicker>
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="field">
+                    <mat-label>Hora de Fin</mat-label>
+                    <input matInput type="time" value="10:00">
+                </mat-form-field>
+            </div>
+
+            <!-- Última fila: Botones Guardar y Cancelar -->
+            <div class="row center-container">
+                <button mat-flat-button color="primary"  (click)="onSubmit()">Guardar</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button mat-flat-button class="custom-delete-button" (click)="onCancel()">Cancelar</button>
+            </div>
+        </form>
+
+
+    </div>
+
+</div>

@@ -49,6 +49,11 @@ export class ListaMedicamentoComponent {
     const filtroValor = (event.target as HTMLInputElement).value;
     this.datos.filter = filtroValor.trim().toLowerCase();
   }
+
+  onSubmit(): void {
+    //console.log(this.form.value);
+    alert('Medicamento Eliminado correctamente');
+  }
 }
 
 

@@ -36,13 +36,13 @@ export class NuevoMedicamentoComponent {
 
   onSubmit(): void {
     //console.log(this.form.value);
-    alert('Formulario enviado correctamente');
+    alert('Medicamento creado correctamente.');
     this.router.navigate(['/medicamento']);
   }
 
   onCancel(): void {
     //this.form.reset();
-    alert('Formulario cancelado');
+    alert('Creacion de medicamento cancelada.');
     this.router.navigate(['/medicamento']);
   }
 
