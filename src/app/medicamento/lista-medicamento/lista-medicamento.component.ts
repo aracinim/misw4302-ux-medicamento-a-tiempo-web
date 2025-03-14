@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 
 interface TablaElemento {
@@ -28,7 +29,7 @@ const ELEMENT_DATA: TablaElemento[] = [
 @Component({
   selector: 'app-lista-medicamento',
   standalone: true,
-  imports: [SidebarComponent, MatTableModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, FormsModule, MatCardModule, MatButtonModule, MatIconModule],
+  imports: [SidebarComponent, MatTableModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, FormsModule, MatCardModule, MatButtonModule, MatIconModule, RouterLink],
   templateUrl: './lista-medicamento.component.html',
   styleUrl: './lista-medicamento.component.scss'
 })
