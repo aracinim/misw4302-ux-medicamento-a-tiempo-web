@@ -6,14 +6,6 @@ $link-color: #C8C6C6;
 $grid-size: 10px;
 $card-background-color: #F7F3F2;
 
-.container {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin-left: 260px;
-}
-
-
 .display-large {
   font-weight: normal;
   font-family: "Roboto", sans-serif;
@@ -95,12 +87,11 @@ $card-background-color: #F7F3F2;
   justify-content: center;
 }
 
-mat-card-content {
-  background: #ffffff;
+mat-card-content, mat-mdc-table, table {
+  background-color: #ffffff !important;
 }
 
 .content-container {
-  display: flex;
   gap: 20px;
 }
 
@@ -121,19 +112,3 @@ th, td {
 tr {
   border-bottom: none;
 }
-
-
-.mat-elevation-z2 {
-  width: 100%;
-  background-color: inherit;
-  border: none;
-}
-
-
-.center-container {
-  display: flex; /* Activa el modo flexbox */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  height: 20vh;
-}
-

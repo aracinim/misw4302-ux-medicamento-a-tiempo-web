@@ -27,3 +27,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: var(--mat-sys-primary) !important; /* Usa un color rojo del sistema */
   color: var(--mat-sys-background) !important; /* Icono blanco */
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-left: 260px;
+  min-width: 800px;
+  max-width: 100%;
+}
+
+.center-container {
+  display: flex; /* Activa el modo flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  //height: 20vh;
+}
+
+.mat-elevation-z2 {
+  width: 100%;
+  background-color: inherit;
+  border: none;
+}
