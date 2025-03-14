@@ -1,4 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use 'theme-colors.scss' as my-theme; // location of generated file
+
+html {
+  @include mat.theme((
+    color: (
+      primary: my-theme.$primary-palette,
+      //secondary: my-theme.$secondary-palette,
+      tertiary: my-theme.$tertiary-palette,
+      //neutral: my-theme.$neutral-palette,
+      //neutral-variant: my-theme.$neutral-variant-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.custom-delete-button {
+  background-color: var(--mat-sys-error) !important; /* Usa un color rojo del sistema */
+  color: var(--mat-sys-background) !important; /* Icono blanco */
+}
+
+.custom-edit-button {
+  background-color: var(--mat-sys-primary) !important; /* Usa un color rojo del sistema */
+  color: var(--mat-sys-background) !important; /* Icono blanco */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-left: 260px;
+  min-width: 800px;
+  max-width: 100%;
+}
+
+.center-container {
+  display: flex; /* Activa el modo flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  //height: 20vh;
+}
+
+.mat-elevation-z2 {
+  width: 100%;
+  background-color: inherit;
+  border: none;
+}

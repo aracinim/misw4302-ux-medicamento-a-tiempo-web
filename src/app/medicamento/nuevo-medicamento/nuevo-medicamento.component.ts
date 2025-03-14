@@ -9,19 +9,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-gestion-medicamento',
+  selector: 'app-nuevo-medicamento',
   imports: [SidebarComponent,
-      MatButtonModule,
-      MatFormFieldModule,
-      MatInputModule,
-      MatNativeDateModule,
-      MatDatepickerModule,
-      MatIconModule
-      ],
-  templateUrl: './gestion-medicamento.component.html',
-  styleUrl: './gestion-medicamento.component.scss'
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatIconModule
+    ],
+  templateUrl: './nuevo-medicamento.component.html',
+  styleUrl: './nuevo-medicamento.component.scss'
 })
-export class GestionMedicamentoComponent {
+export class NuevoMedicamentoComponent {
+
   defaultDateinicio: Date = new Date();
   defaultDateFin: Date = new Date('2025-06-25');
 
@@ -35,13 +36,14 @@ export class GestionMedicamentoComponent {
 
   onSubmit(): void {
     //console.log(this.form.value);
-    alert('Medicamento editado correctamente');
+    alert('Medicamento creado correctamente.');
     this.router.navigate(['/medicamento']);
   }
 
   onCancel(): void {
     //this.form.reset();
-    alert('Edicion cancelada');
+    alert('Creacion de medicamento cancelada.');
     this.router.navigate(['/medicamento']);
   }
+
 }

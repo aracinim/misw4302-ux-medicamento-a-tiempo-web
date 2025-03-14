@@ -1,21 +1,114 @@
 
- .contenedor {
-    display: flex;
-    flex-direction: column;
-    margin:1rem auto;
-    max-width: 600px;
-    box-shadow: -1px 3px 66px 0px rgba(0,0,0,0.75);
-    padding: 1rem;
+$primary-color: #39608F;
+$background-color: #ffffff;
+$text-color: #1B1B1C;
+$link-color: #C8C6C6;
+$grid-size: 10px;
+$card-background-color: #F7F3F2;
+
+.display-large {
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+  font-size: 56px;
+  color: $text-color;
+  margin-bottom: $grid-size;
+  margin-top: 3 * $grid-size;
 }
 
-.example-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 1366px;
-    min-width: 300px;
-  }
-  
-  .mat-table {
-    overflow: auto;
-    max-height: 500px;
-  }
+.filter-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+  margin-bottom: 20px;
+  margin-right: calc(27 * $grid-size);
+}
+
+.filter-button {
+  color: $text-color !important;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.filter-icon {
+  color: $primary-color !important;
+}
+
+.custom-card-stats {
+  display: flex;
+  align-items: center;
+  padding: $grid-size;
+  width: 419px;
+  background-color: #FBF9FA;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: $grid-size;
+}
+
+.custom-card-medicine {
+  display: flex;
+  align-items: center;
+  padding: $grid-size;
+  width: 508px;
+  background-color: #FBF9FA;
+  margin-bottom: $grid-size;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: calc(1 * $grid-size);
+  flex-grow: 1;
+}
+
+.title {
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: $text-color;
+  margin-bottom: calc(0.5 * $grid-size);
+}
+
+.subtitle {
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: $text-color;
+}
+
+.card-actions {
+  background-color: #FBF9FA !important;
+  margin-top: $grid-size;
+  justify-content: center;
+}
+
+mat-card-content, mat-mdc-table, table {
+  background-color: #ffffff !important;
+}
+
+.content-container {
+  gap: 20px;
+}
+
+.table-card {
+  width: 508px;
+  height: 370px;
+  padding: $grid-size;
+  background-color: $card-background-color !important;
+}
+
+
+th, td {
+  text-align: center;
+  vertical-align: middle;
+  color: #1B1B1C;
+}
+
+tr {
+  border-bottom: none;
+}
