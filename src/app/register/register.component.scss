@@ -1,0 +1,92 @@
+$primary-color: #39608F;
+$secondary-color: #8B0000;
+$background-color: #ffffff;
+$text-color: #1B1B1C;
+$link-color: #C8C6C6;
+$grid-size: 10px;
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $background-color;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 323px;
+  height: 100px;
+  background-color: white;
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+h1.display-large {
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+  font-size: 56px;
+  color: $text-color;
+  margin-top: 0;
+  margin-bottom: calc(4 * $grid-size);
+  text-align: center;
+  width: 503px;
+  height: 70px;
+}
+
+.input-field {
+  height: 50px;
+  width: 379px;
+  margin-bottom: calc(4 * $grid-size);
+}
+
+.input-label {
+  color: black;
+}
+
+mat-hint {
+  color: black !important;
+}
+
+.input-field input {
+  color: #1C1B1B !important;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.register-button {
+  background-color: $primary-color !important;
+  color: white !important;
+  width: 153px;
+  height: 50px;
+  font-size: 22px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.cancel-button {
+  background-color: $secondary-color !important;
+  color: white !important;
+  width: 153px;
+  height: 50px;
+  font-size: 22px;
+  font-weight: normal;
+  text-transform: none;
+}
